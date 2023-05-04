@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>new_Customer_Contract_Email_Alert</fullName>
+        <description>new Customer Contract Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contacts__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/New_Customer_Contract_Email_template</template>
+    </alerts>
+</Workflow>

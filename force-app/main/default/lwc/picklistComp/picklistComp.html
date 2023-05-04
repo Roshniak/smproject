@@ -1,0 +1,45 @@
+<template>
+<div if:true={objectInfo.data}>
+            <lightning-combobox name="recordType" label="Record Type" placeholder="Choose Status"
+            value={value} 
+            options={recordTypeId1}
+            onchange ={handleRecordType}>
+            </lightning-combobox>
+            </div> 
+<lightning-card title="Create Case Record" >
+  <!--  <template if:true={statusPickListValues.data}> -->  
+        <lightning-combobox name="Sub-Type"
+                                    label="Sub-Type"
+                                    value={value}
+                                    placeholder="-Select-"
+                                    options={pickListvaluesByRecordType}
+                                    onchange ={handleChange}
+                                    >
+        </lightning-combobox>
+
+
+        <lightning-combobox name="Status"
+        label="Status"
+        value={value}
+        placeholder="-Select-"
+        options={statusPickListValues}
+        onchange ={handleStatusChange}
+        >
+</lightning-combobox>
+
+
+<lightning-combobox name="Origin"
+label="Origin"
+value={value}
+placeholder="-Select-"
+options={OriginPickListValues}
+onchange ={handleOrignChange}
+>
+</lightning-combobox>
+
+<c-case-acc-seachlwc-comp onselected={myLookupHandle}></c-case-acc-seachlwc-comp><br/>
+</lightning-card>
+
+    </template>
+    
+    

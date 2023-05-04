@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Meeting_Accept_Email_Alert</fullName>
+        <description>Meeting Accept Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Meeting_Accept_Mail_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_when_lead_from_web_is_created</fullName>
+        <description>Send email when lead from web is created</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>SM_Dealer/Web_Customer_Email</template>
+    </alerts>
+    <rules>
+        <fullName>Web Email</fullName>
+        <actions>
+            <name>Send_email_when_lead_from_web_is_created</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Web</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Open - Not Contacted</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

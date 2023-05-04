@@ -1,0 +1,14 @@
+<template>
+    <lightning-card>
+        <div style="width:200px; padding:0.5rem;">
+            <lightning-combobox
+                name="filter"
+                label="Industry"
+                value={selectedValue}
+                options={options}
+                onchange={handlePicklistChange}
+                placeholder="Select Industry">
+            </lightning-combobox>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,38 @@
+<template>
+        
+    <div if:true={objectInfo.data}>
+        <lightning-combobox name="recordType" label="Record Type" placeholder="Choose RecordType"
+        value={selectedvalues} 
+        options={recordTypeId1}  
+        onchange = {handleChangeRecordTpye}>
+        </lightning-combobox>
+        </div> 
+       
+        
+        
+               
+
+            
+                <lightning-card title="Create custom lookup on contact object" icon-name="standard:contact"></lightning-card>
+                <lightning-combobox name="Status" label="Status" value={status} options={statusPicklist.data.Status.values} onchange={contactHandleChange} 
+                class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-combobox>
+           
+
+                <lightning-input label="Orign" value={Orign} onchange={contactHandleChange}
+                class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-input>
+                                       
+                <lightning-input label="Priority" value={priority} onchange={contactHandleChange} 
+                class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-input>
+               
+               
+                <lightning-button label="Submit" variant="brand" onclick={createLookupContactAction}
+                 class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-button>                     
+                </lightning-card>  
+           
+    
+        
+   
+
+
+    
+</template>
